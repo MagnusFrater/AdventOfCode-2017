@@ -1,5 +1,5 @@
 # read in all the data
-with open('one') as f:
+with open('01') as f:
 	data = f.readline()
 
 #

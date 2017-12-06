@@ -1,5 +1,5 @@
 # read in the data
-with open("five", "r") as f:
+with open("05", "r") as f:
 	data = f.read()
 
 # put all jumps in a list

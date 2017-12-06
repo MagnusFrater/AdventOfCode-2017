@@ -5,7 +5,7 @@ import re
 #
 
 # read in data
-with open("two") as f:
+with open("02") as f:
 	data = f.read()
 
 sum = 0

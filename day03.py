@@ -5,6 +5,7 @@ input = 289326
 #	Part 1
 #
 
+# object to represent the experimental new type of memory
 class Onion (object):
 	layer = 0
 	smallestIndex = 1
@@ -26,15 +27,19 @@ class Onion (object):
 		self.smallestIndex = self.getLargestIndex() + 1
 		self.layer += 1
 
+	# prints string representation of an Onion instance
 	def toString (self):
 		print("layer", self.layer, "smallestIndex", self.smallestIndex, "largestIndex", self.getLargestIndex(), "size", self.getLayerSize())
 
 # returns the Manhattan Distance (taxi geometry) of the given index within the Onion
 def getManhattanDistance (index, onion):
+	# get the Onion instance's layer's minimum index's 'x,y' coordinate (how does one English...)
 	x = onion.layer
 	y = (onion.layer - 1) * -1 if onion.smallestIndex > 2 else 0
 	sideLength = onion.getSideLength()
 
+	# start at the smallest index within the Onion instance's current layer,
+	# then move through the layer until you find the correct index (using an 'x,y' coordinate)
 	currentIndex = onion.smallestIndex
 
 	# check right-wall indices
@@ -72,9 +77,11 @@ def getManhattanDistance (index, onion):
 def part1 (index):
 	onion = Onion()
 
+	# find which layer the index is on
 	while index > onion.getLargestIndex():
 		onion.nextLayer()
 
+	# find the given index within the layer, as represented by an 'x,y' coordinate
 	return getManhattanDistance(index, onion)
 
 distance = part1(input)

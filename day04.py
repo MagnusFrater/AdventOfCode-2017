@@ -1,5 +1,5 @@
 #read in the data
-with open("four") as f:
+with open("04") as f:
 	data = f.read()
 
 #
