@@ -1,5 +1,5 @@
 # given input
-input = 289326
+INPUT = 289326
 
 #
 #	Part 1
@@ -84,7 +84,7 @@ def part1 (index):
 	# find the given index within the layer, as represented by an 'x,y' coordinate
 	return getManhattanDistance(index, onion)
 
-distance = part1(input)
+distance = part1(INPUT)
 print(distance)
 
 #
@@ -114,7 +114,7 @@ def write (memory, x, y):
 
 	return sum
 
-def part2 (input):
+def part2 (INPUT):
 	# prepare the Onion
 	onion = Onion()
 	x = y = 0
@@ -132,29 +132,29 @@ def part2 (input):
 
 		# write right-wall values
 		for i in range(sideLength):
-			if write(memory, x, y) > input:
+			if write(memory, x, y) > INPUT:
 				return memory[getKey(x,y)]
 			y += 1
 
 		# write top-wall values
 		for i in range(sideLength + 1):
-			if write(memory, x, y) > input:
+			if write(memory, x, y) > INPUT:
 				return memory[getKey(x,y)]
 			x -= 1
 
 		# write left-wall values
 		for i in range(sideLength + 1):
-			if write(memory, x, y) > input:
+			if write(memory, x, y) > INPUT:
 				return memory[getKey(x,y)]
 			y -= 1
 
 		# write bottom-wall values
 		for i in range(sideLength + 2):
-			if write(memory, x, y) > input:
+			if write(memory, x, y) > INPUT:
 				return memory[getKey(x,y)]
 			x += 1
 
 		onion.nextLayer()
 
-firstLargerValue = part2(input)
+firstLargerValue = part2(INPUT)
 print(firstLargerValue)

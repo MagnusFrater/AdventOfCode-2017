@@ -1,5 +1,5 @@
 #read in the data
-with open("04") as f:
+with open("PuzzleInputs/04") as f:
 	data = f.read()
 
 #

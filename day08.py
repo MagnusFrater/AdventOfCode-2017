@@ -1,5 +1,5 @@
 # read in the data
-with open("08", "r") as f:
+with open("PuzzleInputs/08", "r") as f:
 	data = f.read()
 
 # instantiates a register if it doesn't exist already

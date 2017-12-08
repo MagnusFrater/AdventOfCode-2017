@@ -1,5 +1,5 @@
 # read in the memory banks as a int list
-with open("06", "r") as f:
+with open("PuzzleInputs/06", "r") as f:
 	memory_banks = list(map(int, f.read().split()))
 
 #

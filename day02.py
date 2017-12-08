@@ -5,7 +5,7 @@ import re
 #
 
 # read in data
-with open("02") as f:
+with open("PuzzleInputs/02") as f:
 	data = f.read()
 
 sum = 0
