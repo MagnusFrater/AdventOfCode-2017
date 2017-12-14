@@ -38,7 +38,6 @@ def get_score(stream, level, index):
 		# next stream character
 		index += 1
 
-# print(data)
 score = get_score(data, 1, 1)[0]
 print(score)
 
