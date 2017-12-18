@@ -50,6 +50,7 @@ def get_data_as_ascii(data):
 	ascii = []
 	for c in data:
 		ascii.append(ord(c))
+	add_extra_ascii(ascii)
 	return ascii
 
 # append extra ascii values as specified in day 10's docs
@@ -66,11 +67,7 @@ def get_dense_hash(num_list):
 	return dense_hash
 
 # returns full 'Knot Hash'
-def get_knot_hash(data):
-	# turn the string `data` into a list of ints (ascii values), next add extra ints
-	lengths = get_data_as_ascii(data.replace('\n', ''))
-	add_extra_ascii(lengths)
-
+def get_knot_hash(lengths):
 	# create other needed variables
 	num_list = list(range(0,256))
 	index = skip = 0
@@ -94,5 +91,9 @@ def get_knot_hash(data):
 	# please work
 	return hash
 
-knot_hash = get_knot_hash(data)
+# turn the string 'data' into a list of ints (ascii values), then add extra ints
+lengths = get_data_as_ascii(data.replace('\n', ''))
+
+# get/print result
+knot_hash = get_knot_hash(lengths)
 print(knot_hash)
